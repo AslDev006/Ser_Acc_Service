@@ -2,6 +2,8 @@ from django.http import Http404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from .bot import get_post
 from .models import *
 from .serializers import *
 
@@ -11,6 +13,7 @@ class ContactCreateView(APIView):
         serializer = Contact_Serializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            get_post(serializer.data)
             return Response(serializer.data,
                             status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
