@@ -4,4 +4,5 @@ from .models import *
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['name', 'phone_number', 'called', 'create_time']
     list_editable = ['called']
+    list_filter = ['called']
     ordering = ['-create_time']
