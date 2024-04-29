@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     #Packages
     'rest_framework',
     'corsheaders',
+    'telebot',
     #LocalApps
     'models'
 ]
