@@ -136,3 +136,7 @@ MEDIA_ROOT = BASE_DIR / 'static/contents'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    env("CORS_DOMEN1"),
+    env("CORS_DOMEN2"),
+]
